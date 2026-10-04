@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>Simulasi Skor - SPMB Jawa Barat</title>
+    <meta
+      name="description"
+      content="Hitung estimasi skor SPMB Jawa Barat berdasarkan jalur prestasi yang dipilih (SMA/SMK)."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#">
+          <span class="brand-text">
+            <span class="brand-title">SPMB</span>
+            <span class="brand-sub">Jawa Barat</span>
+          </span>
+        </a>
+        <!-- <nav class="top-nav" aria-label="Navigasi publik">
+      <a href="#">Timeline</a>
+      <a href="#">Jalur Pendaftaran</a>
+      <a href="#">Informasi Publik</a>
+    </nav> -->
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle tema gelap">🌙</button>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="page">
+        <div class="space-y-8">
+          <div class="space-y-3">
+            <p class="eyebrow">Alat Bantu</p>
+            <h1 class="page-title">Kalkulator Estimasi Skor</h1>
+            <p class="page-desc">
+              Masukkan nilai Anda untuk menghitung estimasi skor SPMB Jawa Barat
+              berdasarkan jalur yang dipilih.
+            </p>
+          </div>
+
+          <div class="note-amber">
+            <span class="note-label">Catatan: </span>Hasil bersifat estimasi.
+            Posisi CMB dapat berubah karena CMB lain memiliki skor lebih tinggi
+            (jalur prestasi) atau jarak lebih dekat (jalur domisili, afirmasi,
+            dan mutasi).
+          </div>
+
+          <div class="layout">
+            <aside class="sidebar">
+              <div class="card shadow-panel">
+                <p class="card-eyebrow">Jenjang Sekolah</p>
+                <div class="jenjang-grid" id="jenjang-buttons"></div>
+              </div>
+              <div class="card">
+                <p class="card-eyebrow">Jalur Prestasi</p>
+                <nav class="jalur-nav" id="jalur-buttons"></nav>
+              </div>
+            </aside>
+
+            <div class="content">
+              <div class="card card-lg">
+                <div class="panel-head">
+                  <p class="card-eyebrow" id="panel-jenjang">SMA</p>
+                  <h2 id="panel-jalur">Akademik Rapor</h2>
+                </div>
+                <div id="calculator"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <p>
+          &copy;
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          Dibuat Dengan ❤️ Oleh
+          <a href="https://www.instagram.com/cecep.maulana_/" target="_blank"
+            >Cecep Maulanaツ</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <!-- Modal Referensi -->
+    <div id="ref-modal" class="modal-overlay" hidden>
+      <div class="modal" onclick="event.stopPropagation()">
+        <div class="modal-head">
+          <div>
+            <p class="card-eyebrow">Referensi</p>
+            <h2>Tabel Penyetaraan Skor Prestasi</h2>
+          </div>
+          <button
+            type="button"
+            id="ref-close"
+            class="icon-btn"
+            aria-label="Tutup"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="ref-section">
+            <p class="ref-label">A. Kejuaraan Kemdikbud / Kemenag</p>
+            <div id="ref-a"></div>
+          </div>
+          <div class="ref-section">
+            <p class="ref-label">B. Kejuaraan Luar Kementerian</p>
+            <div id="ref-b"></div>
+          </div>
+          <div class="ref-section">
+            <p class="ref-label">C. Prestasi Kepramukaan</p>
+            <p class="ref-note">
+              Disetarakan dengan kejuaraan di luar Kemdikbud/Kemenag.
+            </p>
+            <div id="ref-c"></div>
+          </div>
+          <div class="ref-section">
+            <p class="ref-label">D. Pengalaman Kepemimpinan (OSIS)</p>
+            <p class="ref-note">
+              Disetarakan dengan kejuaraan di luar Kemdikbud/Kemenag.
+            </p>
+            <div id="ref-d"></div>
+          </div>
+          <div class="ref-section">
+            <p class="ref-label">E. Prestasi Paskibraka</p>
+            <p class="ref-note">
+              Disetarakan dengan kejuaraan di luar Kemdikbud/Kemenag.
+            </p>
+            <div id="ref-e"></div>
+          </div>
+          <div class="ref-section">
+            <p class="ref-label">F. Hafiz Qur'an</p>
+            <p class="ref-note">
+              Setara dengan kejuaraan yang diselenggarakan Kementerian Agama.
+            </p>
+            <div id="ref-f"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
